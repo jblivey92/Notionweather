@@ -27,11 +27,11 @@ async function getWeather() {
   const res = await fetch(`https://api.tomorrow.io/v4/weather/realtime?location=${lat},${lon}&apikey=${API_KEY}`);
   const data = await res.json();
 
-  const tempC = data.data.values.temperature;
+  const tempF = (data.data.values.temperature * 9/5) + 32;
   const conditionCode = data.data.values.weatherCode;
   const condition = weatherCodes[conditionCode] || "Unknown";
 
-  document.getElementById("weather").textContent = `🌤 ${tempC.toFixed(32)}°F, ${condition}`;
+  document.getElementById("weather").textContent = `🌤 ${tempC.toFixed(1)}°F, ${condition}`;
 }
 
 async function getSunTimes() {
