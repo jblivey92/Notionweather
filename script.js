@@ -1,10 +1,9 @@
 const API_KEY = "GTyeXluYBtBWDkoFhRnwegoUq0EGS9yX";
-const lat = 44.9429; // Salem, OR
+const lat = 44.9429;
 const lon = -123.0351;
 
-// Weather codes to human-readable descriptions
+// Optional: weather code lookup
 const weatherCodes = {
-  0: "Unknown",
   1000: "Clear",
   1100: "Mostly Clear",
   1101: "Partly Cloudy",
@@ -28,11 +27,11 @@ async function getWeather() {
   const res = await fetch(`https://api.tomorrow.io/v4/weather/realtime?location=${lat},${lon}&apikey=${API_KEY}`);
   const data = await res.json();
 
-  const temp = data.data.values.temperature;
-  const code = data.data.values.weatherCode;
-  const condition = weatherCodes[code] || "Unknown";
+  const tempC = data.data.values.temperature;
+  const conditionCode = data.data.values.weatherCode;
+  const condition = weatherCodes[conditionCode] || "Unknown";
 
-  document.getElementById("weather").textContent = `🌡 ${temp.toFixed(1)}°F, ${condition}`;
+  document.getElementById("weather").textContent = `🌤 ${tempC.toFixed(32)}°F, ${condition}`;
 }
 
 async function getSunTimes() {
