@@ -5,10 +5,10 @@ const lon = -123.0351;
 
 const weatherIcons = {
   1000: "☀", // Clear
-  1100: "🌤", // Mostly Clear🌤☁❄🌨🌩⛈🌧🌬
+  1100: "🌤", // Mostly Clear
   1101: "🌤",  // Partly Cloudy
-  1102: "🌤", // Mostly Cloudy
-  1001: "🌤", // Cloudy
+  1102: "🌤☁", // Mostly Cloudy
+  1001: "☁☁", // Cloudy
   4200: "🌧", // Light Rain
   4000: "🌧", // Drizzle
   4201: "🌧🌧", // Heavy Rain
