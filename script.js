@@ -1,4 +1,4 @@
-const API_KEY = GTyeXluYBtBWDkoFhRnwegoUq0EGS9yX;
+const API_KEY = "GTyeXluYBtBWDkoFhRnwegoUq0EGS9yX";
 const lat = 44.9429; // Salem, OR
 const lon = -123.0351;
 
